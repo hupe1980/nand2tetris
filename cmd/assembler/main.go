@@ -11,16 +11,11 @@ import (
 )
 
 func main() {
-	flag.Usage = func() {
-		fmt.Fprintf(os.Stderr, "Usage of %s:\n", os.Args[0])
-		flag.PrintDefaults()
-	}
-
 	flag.Parse()
 
 	args := flag.Args()
 	if len(args) == 0 {
-		fmt.Fprintln(os.Stderr, "No asm file")
+		fmt.Fprintln(os.Stderr, "Missing asm file")
 		os.Exit(1)
 	}
 
